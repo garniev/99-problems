@@ -1,8 +1,8 @@
 # Ninety-Nine Problems in Python
 
-This project is based on [99-problems](https://github.com/shekhargulati/99-problems) created by shekhargulati. In this project, python is the selected language to solve all problems.
+This project is based on [99-problems](https://github.com/shekhargulati/99-problems) created by shekhargulati. In this time, Python is the selected language to solve all problems.
 
-Taken from README.md file of shekhargulati repo: this is an adaptation of the [Ninety-Nine Prolog Problems](https://sites.google.com/site/prologsite/prolog-problems) written by Werner Hett at the Berne University of Applied Sciences in Berne, Switzerland.
+As you can see in his [README.md](https://github.com/shekhargulati/99-problems/blob/master/README.md) file, this is an adaptation of the [Ninety-Nine Prolog Problems](https://sites.google.com/site/prologsite/prolog-problems) written by Werner Hett at the Berne University of Applied Sciences in Berne, Switzerland.
 
 From the original source:
 
