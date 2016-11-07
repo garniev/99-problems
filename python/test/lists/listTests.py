@@ -3,7 +3,7 @@
 
 import unittest
 
-from src.lists import P01, P02, P03, P04, P05, P06, P07, P08, P09
+from src.lists import P01, P02, P03, P04, P05, P06, P07, P08, P09, P10, P11
 
 class ListTests(unittest.TestCase):
     '''
@@ -113,22 +113,34 @@ class ListTests(unittest.TestCase):
         packedArray = P09.P09().get_packed_array(inputArray)
         self.assertEqual(packedArray, [['a','a','a','a'],['b'],['c','c'],['a','a'],['d'],['e','e','e','e']])
 
+    '''
+    1.10 (*) Run-length encoding of a list.
+    Use the result of problem 1.09 to implement the so-called run-length encoding data compression method. Consecutive duplicates of elements are encoded as terms [N,E] where N is the number of duplicates of the element E.
+
+    Example:
+    ?- encode([a,a,a,a,b,c,c,a,a,d,e,e,e,e],X).
+    X = [[4,a],[1,b],[2,c],[2,a],[1,d],[4,e]]
+    '''
+    def test_P10(self):
+        inputArray = ['a','a','a','a','b','c','c','a','a','d','e','e','e','e']
+        encodingArray = P10.P10().get_encoding_array(inputArray)
+        self.assertEqual(encodingArray, [[4,'a'],[1,'b'],[2,'c'],[2,'a'],[1,'d'],[4,'e']])
+
+    '''
+    1.11 (*) Modified run-length encoding.
+    Modify the result of problem 1.10 in such a way that if an element has no duplicates it is simply copied into the result list. Only elements with duplicates are transferred as [N,E] terms.
+
+    Example:
+    ?- encode_modified([a,a,a,a,b,c,c,a,a,d,e,e,e,e],X).
+    X = [[4,a],b,[2,c],[2,a],d,[4,e]]
+    '''
+    def test_P11(self):
+        inputArray = ['a','a','a','a','b','c','c','a','a','d','e','e','e','e']
+        encodingArray = P11.P11().get_encoding_array_modified(inputArray)
+        self.assertEqual(encodingArray, [[4,'a'],'b',[2,'c'],[2,'a'],'d',[4,'e']])
+
 
 '''
-1.10 (*) Run-length encoding of a list.
-Use the result of problem 1.09 to implement the so-called run-length encoding data compression method. Consecutive duplicates of elements are encoded as terms [N,E] where N is the number of duplicates of the element E.
-
-Example:
-?- encode([a,a,a,a,b,c,c,a,a,d,e,e,e,e],X).
-X = [[4,a],[1,b],[2,c],[2,a],[1,d],[4,e]]
-
-1.11 (*) Modified run-length encoding.
-Modify the result of problem 1.10 in such a way that if an element has no duplicates it is simply copied into the result list. Only elements with duplicates are transferred as [N,E] terms.
-
-Example:
-?- encode_modified([a,a,a,a,b,c,c,a,a,d,e,e,e,e],X).
-X = [[4,a],b,[2,c],[2,a],d,[4,e]]
-
 1.12 (**) Decode a run-length encoded list.
 Given a run-length code list generated as specified in problem 1.11. Construct its uncompressed version.
 
